@@ -2,8 +2,6 @@
 #include <GL/glut.h>
 #include <stdio.h>
 
-int r, x, y, p;
-
 void display(void) {
     /* clear all pixels */
     glClear(GL_COLOR_BUFFER_BIT);
@@ -14,10 +12,10 @@ void display(void) {
      */
 
 
-     void canvas(){
+    void canvas() {
 
 
-         glColor3ub(30, 144, 255);
+        glColor3ub(30, 14, 25);
 
         glBegin(GL_POLYGON);
 
@@ -25,6 +23,44 @@ void display(void) {
         glVertex2d(-600, -600);
 
         glVertex2d(600, -600);
+
+        glVertex2d(600, -200);
+
+        glVertex2d(-600, -200);
+
+
+
+        glEnd();
+
+
+
+        glColor3ub(0, 125, 0);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-600, -200);
+
+        glVertex2d(600, -200);
+
+        glVertex2d(600, 500);
+
+        glVertex2d(-600, 500);
+
+
+
+        glEnd();
+
+
+
+        glColor3ub(50, 150, 220);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-600, 500);
+
+        glVertex2d(600, 500);
 
         glVertex2d(600, 600);
 
@@ -36,91 +72,92 @@ void display(void) {
 
 
 
-     }
+
+    }
+
+    void sun(int h) {
+
+        int r = 175, x = 0, y, p;
+
+        y = r;
+
+        p = 1 - r;
+        printf("p: %d\n", p);
+
+        int i = 0;
+
+        while (x < y) {
+            if (p < 0) {
+
+                x = x + 1;
+                y = y;
+                p = p + 2 * x + 1;
+                i++;
+                printf("p%d: %d\n", i, p);
+                printf("x%d: %d, y%d: %d\n", i, x, i, y);
+                printf("\n");
+
+            } else {
+
+
+                x = x + 1;
+                y = y - 1;
+                p = p + 2 * x - 2 * y + 1;
+                i++;
+
+
+                printf("p%d: %d\n", i, p);
+                printf("x%d: %d, y%d: %d\n", i, x, i, y);
+                printf("\n");
 
 
 
+            }
+
+            glColor3ub(255, 0, 0);
+
+            glBegin(GL_POLYGON);
 
 
-   void sun(int h){
-
-    int i=0;
-
-    while(x<y){
-        if (p < 0) {
-
-            x = x + 1;
-            y = y;
-            p=p+2*x+1;
-            i++;
-            printf("p%d: %d\n",i,p);
-            printf("x%d: %d, y%d: %d\n",i,x,i,y);
-            printf("\n");
-
-        } else {
+            glVertex2d(x, y + h);
 
 
-            x = x + 1;
-            y = y - 1;
-            p=p+2*x-2*y+1;
-            i++;
+
+            glVertex2d(y, x + h);
 
 
-            printf("p%d: %d\n",i,p);
-            printf("x%d: %d, y%d: %d\n",i,x,i,y);
-            printf("\n");
 
+            glVertex2d(y, -x + h);
+
+
+
+            glVertex2d(x, -y + h);
+
+
+
+            glVertex2d(-x, -y + h);
+
+
+
+            glVertex2d(-y, -x + h);
+
+
+
+            glVertex2d(-y, x + h);
+
+
+
+            glVertex2d(-x, y + h);
+
+
+            glEnd();
 
 
         }
 
-        glColor3ub(255, 0, 0);
-
-        glBegin(GL_POLYGON);
-
-
-        glVertex2d(x, y+h);
-
-
-
-        glVertex2d(y, x+h);
-
-
-
-        glVertex2d(y, -x+h);
-
-
-
-        glVertex2d(x, -y+h);
-
-
-
-        glVertex2d(-x, -y+h);
-
-
-
-        glVertex2d(-y, -x+h);
-
-
-
-        glVertex2d(-y, x+h);
-
-
-
-        glVertex2d(-x, y+h);
-
-
-        glEnd();
-
-
     }
 
-}
-
-
-
-
-    void base(){
+    void base() {
 
 
 
@@ -254,13 +291,7 @@ void display(void) {
 
     }
 
-
-
-
-
-
-
-    void sidePiller(int x, int y, int h){
+    void sidePiller(int x, int y, int h) {
 
 
         glColor3ub(220, 225, 250);
@@ -268,13 +299,13 @@ void display(void) {
         glBegin(GL_POLYGON);
 
 
-        glVertex2d(-465+x, -325+y);
+        glVertex2d(-465 + x, -325 + y);
 
-        glVertex2d(-435+x, -325+y);
+        glVertex2d(-435 + x, -325 + y);
 
-        glVertex2d(-435+x, 25+y+h);
+        glVertex2d(-435 + x, 25 + y + h);
 
-        glVertex2d(-465+x, 25+y+h);
+        glVertex2d(-465 + x, 25 + y + h);
 
 
 
@@ -284,89 +315,13 @@ void display(void) {
         glBegin(GL_POLYGON);
 
 
-        glVertex2d(-385+x, -325+y);
+        glVertex2d(-385 + x, -325 + y);
 
-        glVertex2d(-355+x, -325+y);
+        glVertex2d(-355 + x, -325 + y);
 
-        glVertex2d(-355+x, 25+y+h);
+        glVertex2d(-355 + x, 25 + y + h);
 
-        glVertex2d(-385+x, 25+y+h);
-
-
-
-        glEnd();
-
-
-
-         glColor3ub(220, 225, 250);
-
-        glBegin(GL_POLYGON);
-
-
-        glVertex2d(-465+x, 25+y+h);
-
-        glVertex2d(-355+x, 25+y+h);
-
-        glVertex2d(-355+x, 0+y+h);
-
-        glVertex2d(-465+x, 0+y+h);
-
-
-
-        glEnd();
-
-        }
-
-
-
-
-        void middlePiller(int x, int y, int h){
-
-
-        glColor3ub(220, 225, 250);
-
-        glBegin(GL_POLYGON);
-
-
-        glVertex2d(-145+x, -325+y);
-
-        glVertex2d(-115+x, -325+y);
-
-        glVertex2d(-115+x, 200+y+h);
-
-        glVertex2d(-145+x, 200+y+h);
-
-        glEnd();
-
-
-         glColor3ub(220, 225, 250);
-
-        glBegin(GL_POLYGON);
-
-
-        glVertex2d(-145+x, 200+y);
-
-        glVertex2d(-115+x, 200+y);
-
-        glVertex2d(-145+x, 350+y+h);
-
-        glVertex2d(-175+x, 350+y+h);
-
-        glEnd();
-
-
-        glColor3ub(220, 225, 250);
-
-        glBegin(GL_POLYGON);
-
-
-        glVertex2d(-15+x, -325+y);
-
-        glVertex2d(15+x, -325+y);
-
-        glVertex2d(15+x, 200+y+h);
-
-        glVertex2d(-15+x, 200+y+h);
+        glVertex2d(-385 + x, 25 + y + h);
 
 
 
@@ -379,13 +334,67 @@ void display(void) {
         glBegin(GL_POLYGON);
 
 
-        glVertex2d(-15+x, 200+y);
+        glVertex2d(-465 + x, 25 + y + h);
 
-        glVertex2d(15+x, 200+y);
+        glVertex2d(-355 + x, 25 + y + h);
 
-        glVertex2d(0+x, 350+y+h);
+        glVertex2d(-355 + x, 0 + y + h);
 
-        glVertex2d(-30+x, 350+y+h);
+        glVertex2d(-465 + x, 0 + y + h);
+
+
+
+        glEnd();
+
+    }
+
+    void middlePiller(int x, int y, int h) {
+
+
+        glColor3ub(220, 225, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-145 + x, -325 + y);
+
+        glVertex2d(-115 + x, -325 + y);
+
+        glVertex2d(-115 + x, 200 + y + h);
+
+        glVertex2d(-145 + x, 200 + y + h);
+
+        glEnd();
+
+
+        glColor3ub(220, 225, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-145 + x, 200 + y);
+
+        glVertex2d(-115 + x, 200 + y);
+
+        glVertex2d(-145 + x, 350 + y + h);
+
+        glVertex2d(-175 + x, 350 + y + h);
+
+        glEnd();
+
+
+        glColor3ub(220, 225, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-15 + x, -325 + y);
+
+        glVertex2d(15 + x, -325 + y);
+
+        glVertex2d(15 + x, 200 + y + h);
+
+        glVertex2d(-15 + x, 200 + y + h);
 
 
 
@@ -398,31 +407,13 @@ void display(void) {
         glBegin(GL_POLYGON);
 
 
-        glVertex2d(115+x, -325+y);
+        glVertex2d(-15 + x, 200 + y);
 
-        glVertex2d(145+x, -325+y);
+        glVertex2d(15 + x, 200 + y);
 
-        glVertex2d(145+x, 200+y+h);
+        glVertex2d(0 + x, 350 + y + h);
 
-        glVertex2d(115+x, 200+y+h);
-
-
-
-        glEnd();
-
-
-        glColor3ub(220, 225, 250);
-
-        glBegin(GL_POLYGON);
-
-
-        glVertex2d(115+x, 200+y);
-
-        glVertex2d(145+x, 200+y);
-
-        glVertex2d(125+x, 350+y+h);
-
-        glVertex2d(95+x, 350+y+h);
+        glVertex2d(-30 + x, 350 + y + h);
 
 
 
@@ -435,13 +426,50 @@ void display(void) {
         glBegin(GL_POLYGON);
 
 
-        glVertex2d(-175+x, 350+y);
+        glVertex2d(115 + x, -325 + y);
 
-        glVertex2d(125+x, 350+y);
+        glVertex2d(145 + x, -325 + y);
 
-        glVertex2d(120+x, 380+y+h);
+        glVertex2d(145 + x, 200 + y + h);
 
-        glVertex2d(-180+x, 380+y+h);
+        glVertex2d(115 + x, 200 + y + h);
+
+
+
+        glEnd();
+
+
+        glColor3ub(220, 225, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(115 + x, 200 + y);
+
+        glVertex2d(145 + x, 200 + y);
+
+        glVertex2d(125 + x, 350 + y + h);
+
+        glVertex2d(95 + x, 350 + y + h);
+
+
+
+        glEnd();
+
+
+
+        glColor3ub(220, 225, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-175 + x, 350 + y);
+
+        glVertex2d(125 + x, 350 + y);
+
+        glVertex2d(120 + x, 380 + y + h);
+
+        glVertex2d(-180 + x, 380 + y + h);
 
         glEnd();
 
@@ -449,30 +477,30 @@ void display(void) {
 
 
 
-        }
+    }
 
 
 
 
-        canvas();
+    canvas();
 
-        base();
-
-
-        sun(150);
-
-        sidePiller(0,0,0);
-
-        sidePiller(150,0,100);
+    base();
 
 
+    sun(150);
 
-        middlePiller(0,0,0);
+    sidePiller(0, 0, 0);
+
+    sidePiller(150, 0, 100);
 
 
-        sidePiller(665,0,100);
 
-        sidePiller(815,0,0);
+    middlePiller(0, 0, 0);
+
+
+    sidePiller(665, 0, 100);
+
+    sidePiller(815, 0, 0);
 
 
 
@@ -482,7 +510,7 @@ void display(void) {
     /* don't wait!
      * start processing buffered OpenGL routines
      */
-glFlush();
+    glFlush();
 }
 
 void init(void) {
@@ -502,18 +530,6 @@ void init(void) {
  * Enter main loop and process events.
  */
 int main(int argc, char** argv) {
-
-
-    r=175;
-    x = 0;
-    y = r;
-
-    p=1-r;
-    printf("p: %d\n", p);
-
-
-
-
 
 
     glutInit(&argc, argv);

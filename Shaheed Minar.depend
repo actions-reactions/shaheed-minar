@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1522433524 source:u:\smjpx\documents\codeblocks\shaheed minar\main.c
+1522434195 source:u:\smjpx\documents\codeblocks\shaheed minar\main.c
 	<GL/gl.h>
 	<GL/glut.h>
 	<stdio.h>
