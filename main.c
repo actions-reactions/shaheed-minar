@@ -14,6 +14,33 @@ void display(void) {
      */
 
 
+     void canvas(){
+
+
+         glColor3ub(30, 144, 255);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-600, -600);
+
+        glVertex2d(600, -600);
+
+        glVertex2d(600, 600);
+
+        glVertex2d(-600, 600);
+
+
+
+        glEnd();
+
+
+
+     }
+
+
+
+
 
    void sun(int h){
 
@@ -426,6 +453,8 @@ void display(void) {
 
 
 
+
+        canvas();
 
         base();
 
