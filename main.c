@@ -93,6 +93,164 @@ void display(void) {
 sun();
 
 
+
+
+
+        glColor3ub(255, 0, 0);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-500, -500);
+
+        glVertex2d(500, -500);
+
+        glVertex2d(500, -475);
+
+        glVertex2d(-500, -475);
+
+
+
+        glEnd();
+
+
+
+        glColor3ub(0, 250, 0);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-500, -475);
+
+        glVertex2d(500, -475);
+
+        glVertex2d(500, -450);
+
+        glVertex2d(-500, -450);
+
+
+
+        glEnd();
+
+
+        glColor3ub(0, 250, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-500, -450);
+
+        glVertex2d(500, -450);
+
+        glVertex2d(500, -425);
+
+        glVertex2d(-500, -425);
+
+
+
+        glEnd();
+
+
+
+        glColor3ub(0, 250, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-500, -425);
+
+        glVertex2d(500, -425);
+
+        glVertex2d(485, -325);
+
+        glVertex2d(-485, -325);
+
+
+
+        glEnd();
+
+
+
+
+
+
+
+    void sidePiller(int x, int y, int h){
+
+
+        glColor3ub(0, 250, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-465+x, -325+y);
+
+        glVertex2d(-435+x, -325+y);
+
+        glVertex2d(-435+x, 25+y+h);
+
+        glVertex2d(-465+x, 25+y+h);
+
+
+
+        glEnd();
+
+        glColor3ub(0, 250, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-385+x, -325+y);
+
+        glVertex2d(-355+x, -325+y);
+
+        glVertex2d(-355+x, 25+y+h);
+
+        glVertex2d(-385+x, 25+y+h);
+
+
+
+        glEnd();
+
+
+
+         glColor3ub(0, 250, 250);
+
+        glBegin(GL_POLYGON);
+
+
+        glVertex2d(-465+x, 25+y+h);
+
+        glVertex2d(-355+x, 25+y+h);
+
+        glVertex2d(-355+x, 0+y+h);
+
+        glVertex2d(-465+x, 0+y+h);
+
+
+
+        glEnd();
+
+        }
+
+        sidePiller(0,0,0);
+
+        sidePiller(150,0,100);
+
+
+
+
+
+
+        sidePiller(665,0,100);
+
+        sidePiller(815,0,0);
+
+
+
+
+
+
     /* don't wait!
      * start processing buffered OpenGL routines
      */
