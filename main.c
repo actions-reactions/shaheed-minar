@@ -536,7 +536,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(600, 600);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow("Line");
+    glutCreateWindow("Shaheed Minar");
     init();
     glutDisplayFunc(display);
     glutMainLoop();
