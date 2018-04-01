@@ -2,7 +2,8 @@
 #include <GL/glut.h>
 #include <stdio.h>
 
-void canvas() {
+void canvas()
+{
 
 
     glColor3ub(30, 14, 25);
@@ -65,7 +66,8 @@ void canvas() {
 
 }
 
-void sun(int h) {
+void sun(int h)
+{
 
     int r = 175, x = 0, y, p;
 
@@ -76,8 +78,10 @@ void sun(int h) {
 
     int i = 0;
 
-    while (x < y) {
-        if (p < 0) {
+    while (x < y)
+    {
+        if (p < 0)
+        {
 
             x = x + 1;
             y = y;
@@ -87,7 +91,9 @@ void sun(int h) {
             printf("x%d: %d, y%d: %d\n", i, x, i, y);
             printf("\n");
 
-        } else {
+        }
+        else
+        {
 
 
             x = x + 1;
@@ -147,7 +153,8 @@ void sun(int h) {
 
 }
 
-void base() {
+void base()
+{
 
 
 
@@ -281,7 +288,8 @@ void base() {
 
 }
 
-void sidePiller(int x, int y, int h) {
+void sidePiller(int x, int y, int h)
+{
 
 
     glColor3ub(220, 225, 250);
@@ -338,7 +346,8 @@ void sidePiller(int x, int y, int h) {
 
 }
 
-void middlePiller(int x, int y, int h) {
+void middlePiller(int x, int y, int h)
+{
 
 
     glColor3ub(220, 225, 250);
@@ -469,7 +478,8 @@ void middlePiller(int x, int y, int h) {
 
 }
 
-void display(void) {
+void display(void)
+{
     /* clear all pixels */
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3ub(255, 0, 0);
@@ -512,7 +522,8 @@ void display(void) {
     glFlush();
 }
 
-void init(void) {
+void init(void)
+{
     /* select clearing (background) color */
     glClearColor(0, 0, 0, 0);
     /* initialize viewing values */
@@ -528,7 +539,8 @@ void init(void) {
  * Register callback function to display graphics.
  * Enter main loop and process events.
  */
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
 
 
     glutInit(&argc, argv);
